@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Volcanic Racing | Auto-Cross</title>
+<style>
+/* PALETTE : noir, bleu nuit, jaune, rose, blanc, gris */
+:root{
+  --noir:#08090d;
+  --bleu:#111827;
+  --jaune:#f2ff00;
+  --rose:#ff1680;
+  --blanc:#ffffff;
+  --gris:#aeb4c0;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--noir);color:var(--blanc);line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:50;background:rgba(8,9,13,.94);border-bottom:1px solid #272b35;backdrop-filter:blur(10px)}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:20px}
+.logo-mini{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--blanc);flex:none}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+nav a{padding:9px 12px;font-weight:700;font-size:14px;border-radius:8px;color:var(--blanc)}
+nav a:hover{background:var(--jaune);color:var(--noir)}
+.hero{min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px;background:radial-gradient(circle at 50% 35%,#252b3b 0,#11131b 35%,#08090d 72%)}
+.hero-inner{max-width:1050px}
+.hero-logo{width:min(260px,65vw);aspect-ratio:1;border-radius:50%;object-fit:cover;border:4px solid var(--blanc);box-shadow:0 0 35px rgba(242,255,0,.2),0 0 45px rgba(255,22,128,.16);margin-bottom:22px}
+.kicker{color:var(--rose);font-weight:900;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(42px,8vw,86px);line-height:.95;margin:10px 0;color:var(--blanc);text-transform:uppercase;font-weight:900}
+h1 span{color:var(--jaune)}
+.hero p{max-width:760px;margin:20px auto;color:var(--gris);font-size:19px}
+.buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:25px}
+.btn{display:inline-block;padding:13px 20px;border-radius:8px;font-weight:900;border:2px solid var(--jaune);background:var(--jaune);color:var(--noir)}
+.btn.alt{background:transparent;color:var(--blanc);border-color:var(--rose)}
+.btn:hover{transform:translateY(-2px)}
+section{padding:80px 20px;scroll-margin-top:85px}
+.section-dark{background:var(--bleu)}
+.container{max-width:1150px;margin:auto}
+.tag{display:inline-block;color:var(--noir);background:var(--jaune);font-size:12px;font-weight:900;padding:5px 9px;border-radius:5px;text-transform:uppercase;letter-spacing:1px}
+h2{font-size:clamp(32px,5vw,55px);margin:12px 0 8px;text-transform:uppercase;line-height:1;color:var(--blanc)}
+h2 span{color:var(--rose)}
+.intro{max-width:800px;color:var(--gris);font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+.card{background:#0c0f16;border:1px solid #2a2f3a;border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.2)}
+.card img{display:block;width:100%;height:245px;object-fit:cover}
+.card-body{padding:18px}.card h3{margin:0 0 7px;color:var(--jaune)}.card p{margin:0;color:var(--gris)}
+.team-photo{width:100%;max-height:620px;object-fit:cover;border-radius:16px;border:2px solid var(--rose);display:block;margin:30px 0 20px}
+.team-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}
+.team-layout .team-photo{margin:0}
+.list{padding-left:20px;color:var(--gris)}
+.list li{margin:8px 0}.list strong{color:var(--blanc)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}.project{padding:25px;border-left:4px solid var(--rose);background:#0c0f16;border-radius:10px}.project h3{color:var(--jaune);margin-top:0}
+.sponsors{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}.sponsor{min-height:130px;display:flex;align-items:center;justify-content:center;border:1px dashed #626976;border-radius:12px;color:var(--gris);font-weight:900}
+.shop{padding:30px;border:2px solid var(--jaune);border-radius:16px;background:linear-gradient(135deg,#111827,#0b0d12)}
+.shop strong{color:var(--jaune)}
+.contact-box{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}.contact-card{padding:28px;border-radius:14px;background:#0c0f16;border:1px solid #2b303b}.contact-card h3{color:var(--rose);margin-top:0}.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}.social{padding:10px 14px;border:1px solid var(--rose);border-radius:8px;color:var(--blanc)}.social:hover{background:var(--rose)}
+footer{padding:25px 20px;text-align:center;background:#05060a;color:var(--gris);border-top:1px solid #272b35}footer strong{color:var(--jaune)}
+@media(max-width:850px){.nav{flex-direction:column}.team-layout,.contact-box{grid-template-columns:1fr}.grid,.projects,.sponsors{grid-template-columns:1fr}.hero{min-height:70vh;padding-top:55px}nav a{font-size:12px;padding:7px 8px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="#accueil"><img src="logo.png" class="logo-mini" alt="Logo Team Volcanic Racing"></a>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#equipe">Notre équipe</a>
+      <a href="#vehicules">Nos véhicules</a>
+      <a href="#projets">Nos projets</a>
+      <a href="#partenaires">Partenaires</a>
+      <a href="#boutique">Boutique</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="accueil" class="hero">
+  <div class="hero-inner">
+    <img src="logo.png" class="hero-logo" alt="Logo Team Volcanic Racing">
+    <div class="kicker">Auto-Cross • Gironde 33</div>
+    <h1>Team <span>Volcanic</span> Racing</h1>
+    <p>Une équipe familiale passionnée d'Auto-Cross dans le département de la Gironde (33).</p>
+    <div class="buttons">
+      <a class="btn" href="#equipe">Découvrir l'équipe</a>
+      <a class="btn alt" href="#contact">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<section id="equipe" class="section-dark">
+  <div class="container">
+    <span class="tag">01 • L'équipe</span>
+    <h2>Notre <span>équipe</span></h2>
+    <div class="team-layout">
+      <img src="equipe.jpg" class="team-photo" alt="Photo de l'équipe Team Volcanic Racing">
+      <div>
+        <p class="intro"><strong>🏎️ La passion avant tout</strong></p>
+        <p class="intro">Bienvenue sur le site de Team Volcanic Racing ! Nous sommes une équipe familiale réunie autour d'une même passion : l'Auto-Cross et les sensations de la compétition automobile.</p>
+        <p class="intro"><strong>🔥 Un projet familial</strong></p>
+        <p class="intro">Notre objectif est de vivre cette aventure ensemble, de participer aux courses et de partager les coulisses de notre passion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vehicules">
+  <div class="container">
+    <span class="tag">02 • La compétition</span>
+    <h2>Nos <span>véhicules</span></h2>
+    <p class="intro">Découvrez les véhicules de Team Volcanic Racing et les machines engagées dans notre aventure Auto-Cross.</p>
+    <div class="grid">
+      <article class="card"><img src="voiture1.jpg" alt="Voiture Team Volcanic Racing 1"><div class="card-body"><h3>Véhicule 1</h3><p>Une machine préparée pour la compétition et les sensations de l'Auto-Cross.</p></div></article>
+      <article class="card"><img src="voiture2.jpg" alt="Voiture Team Volcanic Racing 2"><div class="card-body"><h3>Véhicule 2</h3><p>Retrouvez ici les photos et l'évolution de nos véhicules.</p></div></article>
+      <article class="card"><img src="voiture3.jpg" alt="Voiture Team Volcanic Racing 3"><div class="card-body"><h3>Véhicule 3</h3><p>Préparation, réglages et moments forts de notre saison.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="projets" class="section-dark">
+  <div class="container">
+    <span class="tag">03 • L'aventure</span>
+    <h2>Nos <span>projets</span></h2>
+    <p class="intro">Retrouvez ici nos prochaines courses, nos résultats et les moments forts de la saison.</p>
+    <div class="projects">
+      <article class="project"><h3>🏁 Les courses</h3><p>Nos participations, nos résultats et les moments forts de la saison seront publiés ici.</p></article>
+      <article class="project"><h3>🔧 Préparation</h3><p>Suivez la préparation des véhicules, les travaux et les coulisses de la Team.</p></article>
+      <article class="project"><h3>📣 Actualités</h3><p>Les dernières nouvelles de Team Volcanic Racing seront publiées ici.</p></article>
+    </div>
+    <img src="voiture1.jpg" class="team-photo" alt="Véhicule de Team Volcanic Racing">
+  </div>
+</section>
+
+<section id="partenaires">
+  <div class="container">
+    <span class="tag">04 • Soutien</span>
+    <h2>Nos <span>partenaires</span></h2>
+    <p class="intro">Vous souhaitez soutenir Team Volcanic Racing ? Contactez-nous pour découvrir nos possibilités de partenariat.</p>
+    <div class="sponsors">
+      <div class="sponsor">VOTRE SPONSOR</div>
+      <div class="sponsor">VOTRE SPONSOR</div>
+      <div class="sponsor">VOTRE SPONSOR</div>
+    </div>
+  </div>
+</section>
+
+<section id="boutique" class="section-dark">
+  <div class="container">
+    <span class="tag">05 • Boutique</span>
+    <h2>La <span>boutique</span></h2>
+    <div class="shop">
+      <h3>👕 Vêtements Team Volcanic Racing</h3>
+      <p>La boutique sera bientôt disponible. Nous préparons des vêtements et articles aux couleurs de la Team.</p>
+      <p><strong>Les nouveautés seront annoncées sur nos réseaux sociaux.</strong></p>
+      <div class="buttons" style="justify-content:flex-start"><a class="btn alt" href="#contact">Nous contacter</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <span class="tag">06 • Réseaux</span>
+    <h2>Nous contacter <span>& suivre</span></h2>
+    <div class="contact-box">
+      <div class="contact-card">
+        <h3>📲 NOUS CONTACTER & NOUS SUIVRE</h3>
+        <p class="intro">Retrouvez Team Volcanic Racing sur nos réseaux sociaux et contactez-nous directement !</p>
+        <div class="socials">
+          <a class="social" href="mailto:teamvolcanixracing@mail.com">📩 Email</a>
+          <a class="social" href="https://www.instagram.com/team_volcanix_racing/" target="_blank" rel="noopener">Instagram</a>
+          <a class="social" href="https://www.tiktok.com/@team_volcanix_racing" target="_blank" rel="noopener">TikTok</a>
+          <a class="social" href="https://www.facebook.com/profile.php?id=61591798231258" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>🏁 Team Volcanic Racing</h3>
+        <p class="intro">Une équipe familiale passionnée d'Auto-Cross dans le département de la Gironde (33).</p>
+        <img src="voiture3.jpg" style="width:100%;height:220px;object-fit:cover;border-radius:10px" alt="Véhicule Team Volcanic Racing">
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 <strong>Team Volcanic Racing</strong> • Auto-Cross • Gironde (33)</footer>
+</body>
+</html>
